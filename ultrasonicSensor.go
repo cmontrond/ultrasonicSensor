@@ -9,7 +9,6 @@ import (
 	"time"
 )
 
-
 func robotRunLoop(gopigo3 *g.Driver, ultrasonicSensor *aio.AnalogSensorDriver) {
 	for {
 
@@ -20,7 +19,6 @@ func robotRunLoop(gopigo3 *g.Driver, ultrasonicSensor *aio.AnalogSensorDriver) {
 		}
 
 		fmt.Println("Sensor Value is ", ultrasonicSensorVal)
-
 
 		time.Sleep(time.Second)
 	}
@@ -36,7 +34,7 @@ func main() {
 		robotRunLoop(gopigo3, ultrasonicSensor)
 	}
 
-	robot := gobot.NewRobot("gopigo3sensorChecker",
+	robot := gobot.NewRobot("gopigo3ultrasonicSensor",
 		[]gobot.Connection{raspiAdaptor},
 		[]gobot.Device{gopigo3, ultrasonicSensor},
 		mainRobotFunc,
