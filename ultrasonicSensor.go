@@ -28,7 +28,7 @@ func main() {
 	raspiAdaptor := raspi.NewAdaptor()
 	gopigo3 := g.NewDriver(raspiAdaptor)
 
-	ultrasonicSensor := aio.NewAnalogSensorDriver(gopigo3, "AD_2_1")
+	ultrasonicSensor := aio.NewAnalogSensorDriver(gopigo3, "AD_1_1")
 
 	mainRobotFunc := func() {
 		robotRunLoop(gopigo3, ultrasonicSensor)
